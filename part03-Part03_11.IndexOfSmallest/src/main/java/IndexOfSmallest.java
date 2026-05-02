@@ -6,13 +6,23 @@ public class IndexOfSmallest {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-
-        // implement here a program that reads user input
-        // until the user enters 9999
         
-        // after that, the program prints the smallest number
-        // and its index -- the smallest number
-        // might appear multiple times
+        ArrayList<Integer> lista = new ArrayList<>();
+        lista.add(scanner.nextInt());
+        int temp = lista.get(0), in = 0;
+        if(lista.get(0) != 9999){
+            for(int i = 1; i < i + 1; i ++){
+                lista.add(scanner.nextInt());
+                if(lista.get(i) == 9999) break;
+                int n = lista.get(i);
+                if(n< temp) {
+                    temp = n;
+                    in = i;
+                }
+            }
+        }
+        System.out.println("Smallest number: " + temp);
+        System.out.println("Found at index: " + in);
 
         
     }
